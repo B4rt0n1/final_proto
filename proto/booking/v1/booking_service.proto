@@ -1,0 +1,109 @@
+
+// booking_service.proto
+syntax = "proto3";
+
+package carrental.booking.v1;
+
+option go_package = "github.com/B4rt0n1/final_gRPC/carrental/booking/v1;bookingv1";
+
+service BookingService {
+  rpc CreateBooking(CreateBookingRequest) returns (BookingResponse);
+  rpc GetBookingById(GetBookingByIdRequest) returns (BookingResponse);
+  rpc ListUserBookings(ListUserBookingsRequest) returns (BookingsResponse);
+  rpc CancelBooking(CancelBookingRequest) returns (MessageResponse);
+  rpc UpdateBooking(UpdateBookingRequest) returns (BookingResponse);
+  rpc ConfirmBooking(ConfirmBookingRequest) returns (BookingResponse);
+  rpc StartRental(StartRentalRequest) returns (MessageResponse);
+  rpc EndRental(EndRentalRequest) returns (MessageResponse);
+  rpc CalculateRentalCost(CalculateRentalCostRequest) returns (RentalCostResponse);
+  rpc ApplyDiscount(ApplyDiscountRequest) returns (RentalCostResponse);
+  rpc GetBookingStatus(GetBookingStatusRequest) returns (BookingStatusResponse);
+  rpc ReportIssue(ReportIssueRequest) returns (MessageResponse);
+}
+
+message Booking {
+  string id = 1;
+  string user_id = 2;
+  string car_id = 3;
+  string start_date = 4;
+  string end_date = 5;
+  string status = 6;
+  double total_price = 7;
+}
+
+message CreateBookingRequest {
+  string user_id = 1;
+  string car_id = 2;
+  string start_date = 3;
+  string end_date = 4;
+}
+
+message GetBookingByIdRequest {
+  string booking_id = 1;
+}
+
+message ListUserBookingsRequest {
+  string user_id = 1;
+}
+
+message CancelBookingRequest {
+  string booking_id = 1;
+}
+
+message UpdateBookingRequest {
+  string booking_id = 1;
+  string start_date = 2;
+  string end_date = 3;
+}
+
+message ConfirmBookingRequest {
+  string booking_id = 1;
+}
+
+message StartRentalRequest {
+  string booking_id = 1;
+}
+
+message EndRentalRequest {
+  string booking_id = 1;
+}
+
+message CalculateRentalCostRequest {
+  string car_id = 1;
+  int32 rental_days = 2;
+}
+
+message ApplyDiscountRequest {
+  string booking_id = 1;
+  string discount_code = 2;
+}
+
+message GetBookingStatusRequest {
+  string booking_id = 1;
+}
+
+message ReportIssueRequest {
+  string booking_id = 1;
+  string issue_description = 2;
+}
+
+message BookingResponse {
+  Booking booking = 1;
+}
+
+message BookingsResponse {
+  repeated Booking bookings = 1;
+}
+
+message RentalCostResponse {
+  double original_price = 1;
+  double discounted_price = 2;
+}
+
+message BookingStatusResponse {
+  string status = 1;
+}
+
+message MessageResponse {
+  string message = 1;
+}

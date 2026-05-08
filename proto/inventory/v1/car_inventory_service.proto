@@ -1,0 +1,124 @@
+
+// car_inventory_service.proto
+syntax = "proto3";
+
+package carrental.inventory.v1;
+
+option go_package = "github.com/B4rt0n1/final_gRPC/carrental/inventory/v1;inventoryv1";
+
+service CarInventoryService {
+  rpc AddCar(AddCarRequest) returns (CarResponse);
+  rpc UpdateCar(UpdateCarRequest) returns (CarResponse);
+  rpc DeleteCar(DeleteCarRequest) returns (MessageResponse);
+  rpc GetCarById(GetCarByIdRequest) returns (CarResponse);
+  rpc ListCars(ListCarsRequest) returns (CarsResponse);
+  rpc SearchCars(SearchCarsRequest) returns (CarsResponse);
+  rpc CheckAvailability(CheckAvailabilityRequest) returns (AvailabilityResponse);
+  rpc UpdateAvailability(UpdateAvailabilityRequest) returns (MessageResponse);
+  rpc GetCarPricing(GetCarPricingRequest) returns (PricingResponse);
+  rpc SetDynamicPricing(SetDynamicPricingRequest) returns (MessageResponse);
+  rpc UploadCarImages(UploadCarImagesRequest) returns (MessageResponse);
+  rpc GetCarReviews(GetCarReviewsRequest) returns (ReviewsResponse);
+}
+
+message Car {
+  string id = 1;
+  string brand = 2;
+  string model = 3;
+  int32 year = 4;
+  string category = 5;
+  double price_per_day = 6;
+  bool available = 7;
+}
+
+message AddCarRequest {
+  string brand = 1;
+  string model = 2;
+  int32 year = 3;
+  string category = 4;
+  double price_per_day = 5;
+}
+
+message UpdateCarRequest {
+  string car_id = 1;
+  string brand = 2;
+  string model = 3;
+  double price_per_day = 4;
+  bool available = 5;
+}
+
+message DeleteCarRequest {
+  string car_id = 1;
+}
+
+message GetCarByIdRequest {
+  string car_id = 1;
+}
+
+message ListCarsRequest {}
+
+message SearchCarsRequest {
+  string category = 1;
+  double min_price = 2;
+  double max_price = 3;
+  string location = 4;
+}
+
+message CheckAvailabilityRequest {
+  string car_id = 1;
+  string start_date = 2;
+  string end_date = 3;
+}
+
+message UpdateAvailabilityRequest {
+  string car_id = 1;
+  bool available = 2;
+}
+
+message GetCarPricingRequest {
+  string car_id = 1;
+}
+
+message SetDynamicPricingRequest {
+  string car_id = 1;
+  double new_price = 2;
+}
+
+message UploadCarImagesRequest {
+  string car_id = 1;
+  repeated string image_urls = 2;
+}
+
+message GetCarReviewsRequest {
+  string car_id = 1;
+}
+
+message CarResponse {
+  Car car = 1;
+}
+
+message CarsResponse {
+  repeated Car cars = 1;
+}
+
+message AvailabilityResponse {
+  bool available = 1;
+}
+
+message PricingResponse {
+  double price_per_day = 1;
+}
+
+message Review {
+  string user_id = 1;
+  int32 rating = 2;
+  string comment = 3;
+}
+
+message ReviewsResponse {
+  repeated Review reviews = 1;
+}
+
+message MessageResponse {
+  string message = 1;
+}

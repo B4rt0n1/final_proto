@@ -1017,7 +1017,7 @@ const file_booking_v1_booking_service_proto_rawDesc = "" +
 	"\x13CalculateRentalCost\x120.carrental.booking.v1.CalculateRentalCostRequest\x1a(.carrental.booking.v1.RentalCostResponse\x12e\n" +
 	"\rApplyDiscount\x12*.carrental.booking.v1.ApplyDiscountRequest\x1a(.carrental.booking.v1.RentalCostResponse\x12n\n" +
 	"\x10GetBookingStatus\x12-.carrental.booking.v1.GetBookingStatusRequest\x1a+.carrental.booking.v1.BookingStatusResponse\x12^\n" +
-	"\vReportIssue\x12(.carrental.booking.v1.ReportIssueRequest\x1a%.carrental.booking.v1.MessageResponseB>Z<github.com/B4rt0n1/final_gRPC/carrental/booking/v1;bookingv1b\x06proto3"
+	"\vReportIssue\x12(.carrental.booking.v1.ReportIssueRequest\x1a%.carrental.booking.v1.MessageResponseB<Z:github.com/B4rt0n1/final_proto/gen/go/booking/v1;bookingv1b\x06proto3"
 
 var (
 	file_booking_v1_booking_service_proto_rawDescOnce sync.Once

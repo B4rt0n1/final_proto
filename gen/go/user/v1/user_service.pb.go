@@ -1183,7 +1183,7 @@ const file_user_v1_user_service_proto_rawDesc = "" +
 	"\x0eChangePassword\x12(.carrental.user.v1.ChangePasswordRequest\x1a\".carrental.user.v1.MessageResponse\x12h\n" +
 	"\x13UploadDriverLicense\x12-.carrental.user.v1.UploadDriverLicenseRequest\x1a\".carrental.user.v1.MessageResponse\x12p\n" +
 	"\x14GetUserRentalHistory\x12..carrental.user.v1.GetUserRentalHistoryRequest\x1a(.carrental.user.v1.RentalHistoryResponse\x12s\n" +
-	"\x15GetUserPaymentMethods\x12/.carrental.user.v1.GetUserPaymentMethodsRequest\x1a).carrental.user.v1.PaymentMethodsResponseB8Z6github.com/B4rt0n1/final_gRPC/carrental/user/v1;userv1b\x06proto3"
+	"\x15GetUserPaymentMethods\x12/.carrental.user.v1.GetUserPaymentMethodsRequest\x1a).carrental.user.v1.PaymentMethodsResponseB6Z4github.com/B4rt0n1/final_proto/gen/go/user/v1;userv1b\x06proto3"
 
 var (
 	file_user_v1_user_service_proto_rawDescOnce sync.Once

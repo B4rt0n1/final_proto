@@ -1,4 +1,4 @@
-module github.com/B4rt0n1/final_proto
+module github.com/B4rt0n1/final_proto/gen/go
 
 go 1.25.5
 

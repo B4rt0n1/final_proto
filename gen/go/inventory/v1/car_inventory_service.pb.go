@@ -1171,7 +1171,7 @@ const file_inventory_v1_car_inventory_service_proto_rawDesc = "" +
 	"\rGetCarPricing\x12,.carrental.inventory.v1.GetCarPricingRequest\x1a'.carrental.inventory.v1.PricingResponse\x12n\n" +
 	"\x11SetDynamicPricing\x120.carrental.inventory.v1.SetDynamicPricingRequest\x1a'.carrental.inventory.v1.MessageResponse\x12j\n" +
 	"\x0fUploadCarImages\x12..carrental.inventory.v1.UploadCarImagesRequest\x1a'.carrental.inventory.v1.MessageResponse\x12f\n" +
-	"\rGetCarReviews\x12,.carrental.inventory.v1.GetCarReviewsRequest\x1a'.carrental.inventory.v1.ReviewsResponseBBZ@github.com/B4rt0n1/final_gRPC/carrental/inventory/v1;inventoryv1b\x06proto3"
+	"\rGetCarReviews\x12,.carrental.inventory.v1.GetCarReviewsRequest\x1a'.carrental.inventory.v1.ReviewsResponseB@Z>github.com/B4rt0n1/final_proto/gen/go/inventory/v1;inventoryv1b\x06proto3"
 
 var (
 	file_inventory_v1_car_inventory_service_proto_rawDescOnce sync.Once

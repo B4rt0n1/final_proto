@@ -4,7 +4,7 @@ syntax = "proto3";
 
 package carrental.inventory.v1;
 
-option go_package = "github.com/B4rt0n1/final_gRPC/carrental/inventory/v1;inventoryv1";
+option go_package = "github.com/B4rt0n1/final_proto/gen/go/inventory/v1;inventoryv1";
 
 service CarInventoryService {
   rpc AddCar(AddCarRequest) returns (CarResponse);
